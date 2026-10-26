@@ -1,0 +1,6 @@
+title: OpenVehicle
+description: Il catalogo aperto delle automobili. Dati tecnici, fonti trasparenti e strumenti per confrontare.
+url: https://openvehicle.pacificit.solutions
+baseurl: ""
+markdown: kramdown
+exclude: [scripts, README.md, Gemfile, Gemfile.lock, vendor, tests, BUSINESS.md, assets/data/catalogue.zip]
