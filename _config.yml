@@ -1,5 +1,5 @@
 title: VehicleData
-description: Schede tecniche auto per mercato: codici motore, potenza, omologazione, dimensioni e consumi.
+description: "Schede tecniche auto per mercato: codici motore, potenza, omologazione, dimensioni e consumi."
 url: https://vehicledata.pacificit.solutions
 baseurl: ""
 markdown: kramdown
