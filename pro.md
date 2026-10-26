@@ -1,32 +1,27 @@
 ---
 layout: default
-title: OpenVehicle per aziende
+title: Servizi professionali
 permalink: /pro/
 ---
 <div class="prose" markdown="1">
-<p class="eyebrow blue">OPEN DATA. PROFESSIONAL SERVICES.</p>
 
-# I dati sono aperti.<br>Il valore è nell’integrazione.
+# Servizi professionali
 
-Stai costruendo un portale auto, un gestionale o uno strumento di confronto? PACIFIC IT Solutions può valutare un progetto di integrazione basato sulle fonti disponibili e sulla copertura richiesta.
+PACIFIC IT Solutions valuta progetti di fornitura e integrazione di dati automobilistici sulla base dei mercati e dei campi richiesti.
 
-| Servizio su richiesta | Per chi | Cosa valutiamo insieme |
+| Servizio | Destinatari | Contenuto |
 |---|---|---|
-| Integrazione dati | Portali e software house | Importazione, mapping, aggiornamenti e controlli |
-| Dataset su misura | Analisti e operatori auto | Selezione, normalizzazione e formati di consegna |
-| API gestita | Applicazioni professionali | Endpoint dedicati, volumi, monitoraggio e assistenza |
-| Sponsorizzazione | Aziende del settore | Spazi esplicitamente pubblicitari, separati dai dati |
+| Integrazione dati | Software house e portali | Mapping, importazione e aggiornamenti |
+| Dataset su specifica | Analisti e operatori | Selezione, normalizzazione e consegna |
+| API dedicata | Applicazioni professionali | Endpoint, monitoraggio e assistenza su progetto |
+| Sponsorizzazione | Aziende del settore | Spazi pubblicitari identificati come tali |
 
-**I servizi professionali richiedono una valutazione e un preventivo.** Nessun abbonamento o pagamento è attivo sul sito. L’API gestita è un servizio da progettare, non un prodotto già disponibile con SLA.
+Prezzi, disponibilità e livelli di servizio vengono definiti nel preventivo. Nessun pagamento o abbonamento è attivo su questo sito. L’acquisto di servizi non garantisce dati assenti nelle fonti né accesso esclusivo ai dati originari.
 
-[Parla con PACIFIC IT Solutions ↗](https://pacificit.solutions)
+[Richiedi informazioni a PACIFIC IT Solutions](https://pacificit.solutions)
 
-## Il catalogo resta gratuito
+## Criteri commerciali
 
-La consultazione pubblica, i confronti e i download aperti non richiedono un pagamento. I servizi commerciali riguardano integrazione, manutenzione e assistenza: non promettono accesso esclusivo a dati già pubblici.
-
-## Indipendenza editoriale
-
-Le sponsorizzazioni saranno indicate come pubblicità. Un partner non può acquistare uno stato di verifica, modificare una specifica tecnica o nascondere una fonte. Eventuali link affiliati saranno riconoscibili prima del clic. Al momento non sono attivi annunci, affiliazioni o tracciamenti pubblicitari.
+Gli annunci saranno distinti dalle schede tecniche. I partner non possono acquistare un’etichetta di verifica o modificare le specifiche. Al momento non sono presenti circuiti pubblicitari o link affiliati attivi.
 
 </div>

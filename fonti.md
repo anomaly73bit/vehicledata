@@ -1,47 +1,64 @@
 ---
 layout: default
-title: Fonti e metodo
+title: Copertura e fonti tecniche
 permalink: /fonti/
 ---
 <div class="prose" markdown="1">
 
-<p class="eyebrow blue">CONOSCERE I LIMITI È PARTE DELLA QUALITÀ</p>
+# Copertura e fonti tecniche
 
-# Fonti aperte. Metodo trasparente.
+VehicleData è un catalogo commerciale di informazioni automobilistiche curato da PACIFIC IT Solutions. Le schede conservano mercato, identificativo e provenienza dei dati.
 
-OpenVehicle è un catalogo indipendente di dati automobilistici. La prima versione usa il dataset **FuelEconomy.gov del Dipartimento dell’Energia USA e dell’EPA**. Non è affiliato a questi enti.
+| Mercato | Fonte | Contenuti |
+|---|---|---|
+| Svizzera | [ASTRA — Type Approval System](https://opendata.astra.admin.ch/ivzod/4000-Typengenehmigungen_TAS/4300-Datensaetze/) | Omologazioni autovetture M1/M1G, tipo/variante/versione, codice motore, kW, coppia, omologazione UE e CH, dimensioni, masse e pneumatici dove presenti |
+| Francia | [ADEME — Car Labelling](https://data.ademe.fr/datasets/ademe-car-labelling) | Configurazioni commercializzate, potenza, cilindrata, cambio, masse e intervalli WLTP |
+| Stati Uniti | [DOE / EPA — FuelEconomy.gov](https://www.fueleconomy.gov/feg/ws/index.shtml) | Configurazioni per anno modello, motorizzazione, cilindrata, cambio e consumi EPA |
+| Canada | [Natural Resources Canada](https://open.canada.ca/data/en/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64) | Configurazioni per anno modello, cilindrata, cambio, consumi ed emissioni |
 
-## Copertura effettiva
+**La copertura attuale è limitata a questi quattro mercati e ai contenuti delle relative fonti. Non è un censimento completo di tutte le auto del mondo.** La presenza di una marca giapponese, cinese o coreana non equivale alla copertura del suo mercato nazionale. Italia, Germania e altri Paesi non vengono aggiunti come mercati sulla sola base di un’omologazione UE.
 
-Sono inclusi i record delle categorie auto, sportive a due posti, station wagon e SUV. Sono esclusi pickup, furgoni, minivan e categorie speciali ambigue. I record descrivono configurazioni per anno modello del **mercato statunitense**, non tutte le auto del mondo. Un anno modello può essere successivo all’anno solare. Più record possono riferirsi allo stesso modello con cambi o motori diversi.
+## Identificazione dei record
 
-Il conteggio è calcolato sui record importati, non su modelli unici. Le versioni europee non sono assimilate automaticamente a quelle USA. L’archivio europeo è una fase successiva, non una copertura già disponibile.
+Gli ID iniziano con `ch-`, `fr-`, `epa-` oppure `ca-`. Un record può descrivere una configurazione, una voce di catalogo o una scheda di omologazione; non rappresenta necessariamente un modello unico. Le revisioni ASTRA sono distinte tramite numero di omologazione CH e numero di versione del documento.
 
-## Provenienza e riutilizzo
+Non uniamo record di mercati diversi usando solo marca e nome del modello. Non attribuiamo a una versione USA il codice motore o la potenza di una versione svizzera.
 
-- [Dataset e documentazione ufficiale DOE / EPA](https://www.fueleconomy.gov/feg/ws/index.shtml).
-- [Archivio CSV originale](https://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip).
-- [Catalogo pubblico della California: Vehicle Fuel Economy, dichiarato Public Domain](https://publish.data.ca.gov/dataset/vehicle-fuel-economy).
-- [Manifest locale con data d’importazione e SHA-256 del download]({{ '/assets/data/manifest.json' | relative_url }}).
+## Significato dell’anno
 
-Il codice applicativo è distribuito con licenza MIT. I dati di terzi conservano il loro regime originario; non vengono rilicenziati come software MIT. L’immagine principale è un concept generato con AI, non una fotografia identificativa di un modello.
+- **Anno modello:** indicato dalle fonti USA e Canada; può essere diverso dall’anno di produzione o prima immatricolazione.
+- **Anno omologazione:** anno della data di approvazione ASTRA; non dimostra tutti gli anni di vendita della versione.
+- **Anno catalogo:** anno dello snapshot ADEME; non è un anno modello dichiarato dal costruttore.
 
-## Cosa significa “Importato dalla fonte”
+Il filtro “Anno di riferimento” usa il valore corrispondente al tipo indicato in ogni scheda.
 
-Significa che il record è stato acquisito dal dataset indicato e sottoposto a controlli strutturali. **Non significa verifica manuale di ogni valore.** Il link nella scheda consente di controllare il record originale. Non assegniamo percentuali arbitrarie di affidabilità.
+## Codice motore, potenza e omologazione
 
-I campi non presenti nella fonte rimangono “Non disponibile”, in particolare potenza, codice motore del costruttore e omologazione UE. L’identificativo motore interno EPA non viene presentato come codice motore del costruttore.
+Il codice motore ASTRA proviene dal campo `chEngineCodeAsMarkedOnTheEngine`, cioè il contrassegno motore registrato nella fonte. Il tipo motore è un campo separato. La potenza ASTRA è la potenza massima netta in kW; per ADEME è la potenza massima espressa in kW. La potenza elettrica nominale o continua è conservata separatamente e non sostituisce automaticamente la potenza di picco.
 
-## Unità e classificazione
+L’omologazione UE ASTRA proviene da `typeApprovalNumber`. Le estensioni iniziale e finale sono mostrate separatamente. L’omologazione CH non viene spacciata per un codice UE. Le schede possono essere storiche: quando disponibili mostriamo date di scadenza e annullamento.
 
-Cilindrata in litri. Consumi EPA in MPG statunitensi o MPGe, secondo il combustibile; consumo elettrico in kWh/100 miglia e CO₂ in grammi/miglio. I valori EPA non sono valori WLTP e non vengono convertiti in dichiarazioni di omologazione europea. Le descrizioni tecniche originali di cambio, trazione e combustibile sono preservate in inglese.
+I campi assenti sono indicati come “Non presente nella fonte”. Nessun valore viene dedotto dal nome commerciale. I filtri permettono di selezionare record che contengono codice motore, potenza e/o omologazione UE.
 
-Le etichette italiane delle categorie e delle alimentazioni sono normalizzazioni di OpenVehicle. I valori numerici assenti o negativi sono null; alcuni zeri nella fonte possono indicare campi non applicabili. La fonte originale rimane il riferimento.
+## Unità, categorie e limiti
 
-## Correzioni e aggiornamenti
+Potenza in kW, cilindrata in litri, coppia in Nm e dimensioni in mm. Per la Svizzera la massa mostrata è la massa in ordine di marcia; per ADEME è il peso a vuoto della fonte. Eventuali intervalli sono conservati nei campi minimo/massimo disponibili.
 
-[Segnala un errore su GitHub](https://github.com/anomaly73bit/openvehicle/issues/new) indicando ID del record, campo contestato e fonte a supporto. Gli aggiornamenti del dataset vengono importati con uno script riproducibile. Ogni import produce un manifest; la versione Git permette di ricostruire le modifiche. Il workflow manuale propone una pull request per revisione.
+Le descrizioni originali dei cambi e dei pneumatici possono essere in inglese, tedesco o francese. I codici combustibile ASTRA senza traduzione verificata restano esplicitamente etichettati come codici della fonte.
 
-Le schede sono informative: non sostituiscono COC, carta di circolazione o valutazioni tecniche ufficiali.
+Consumi EPA in MPG statunitensi o MPGe e CO₂ in g/miglio. Dati canadesi in L/100 km e g/km; i valori 1995–2014 sono stime ricalcolate secondo la metodologia NRCan a cinque cicli. Gli intervalli ADEME riguardano configurazioni WLTP. Non sono misure direttamente equivalenti.
+
+Sono escluse le classi camion, pickup, furgoni e minibus. L’importazione ASTRA seleziona autovetture tipo CH 10, categoria M1/M1G. Non vengono importati proprietari, targhe o VIN individuali.
+
+## Attribuzione e condizioni delle fonti
+
+- **ASTRA / USTRA:** dati tecnici delle omologazioni, distribuiti tramite la piattaforma ufficiale. Elaborazione e presentazione VehicleData; [condizioni e descrizione dei prodotti](https://www.astra.admin.ch/de/fahrzeugdaten).
+- **ADEME:** Car Labelling, riutilizzato secondo la [licenza Etalab 2.0 indicata nel catalogo ufficiale](https://www.data.gouv.fr/datasets/ademe-car-labelling). Conversioni di etichette, selezione e presentazione VehicleData.
+- **DOE / EPA:** FuelEconomy.gov; [descrizione e download della fonte](https://www.fueleconomy.gov/feg/ws/index.shtml).
+- **Natural Resources Canada:** Fuel Consumption Ratings; riutilizzo secondo la [licenza del Governo del Canada](https://open.canada.ca/en/open-government-licence-canada). Il servizio non è affiliato né approvato dal Governo del Canada.
+
+La natura commerciale del sito non modifica i diritti e le condizioni dei dati originari. La consultazione delle schede non costituisce certificazione del singolo veicolo. Per pratiche amministrative fanno riferimento i documenti ufficiali e il COC.
+
+Per segnalare una correzione, comunica a [PACIFIC IT Solutions](https://pacificit.solutions) l’ID del record, il campo e la documentazione a supporto.
 
 </div>

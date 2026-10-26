@@ -7,7 +7,7 @@ permalink: /privacy/
 
 # Privacy essenziale
 
-Questa versione di OpenVehicle non include account, moduli di raccolta dati, cookie pubblicitari o strumenti di analisi del traffico. Ricerca e confronto vengono eseguiti nel browser; non inviamo il testo cercato a un nostro backend.
+Questa versione di VehicleData non include account, moduli di raccolta dati, cookie pubblicitari o strumenti di analisi del traffico. Ricerca e confronto vengono eseguiti nel browser; non inviamo il testo cercato a un nostro backend.
 
 Il servizio di hosting può trattare dati tecnici delle richieste, come indirizzo IP e log, secondo le proprie condizioni. I collegamenti a GitHub, FuelEconomy.gov e PACIFIC IT Solutions portano a servizi esterni con le rispettive informative.
 

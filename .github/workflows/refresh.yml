@@ -1,22 +1,12 @@
-name: Propose vehicle data refresh
+name: Validate catalogue snapshots
 on:
   workflow_dispatch:
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 jobs:
-  refresh:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: python scripts/import_epa.py
-      - uses: peter-evans/create-pull-request@v7
-        with:
-          branch: data/epa-refresh
-          title: Refresh DOE EPA catalogue
-          commit-message: Refresh official EPA data with source manifest
-          body: Review coverage and source changes before merging this data update.
-          add-paths: assets/data
+      - run: python3 scripts/unpack_data.py
+      - run: python3 scripts/validate_catalogue.py

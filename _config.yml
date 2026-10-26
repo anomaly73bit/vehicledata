@@ -1,6 +1,6 @@
-title: OpenVehicle
-description: Il catalogo aperto delle automobili. Dati tecnici, fonti trasparenti e strumenti per confrontare.
-url: https://openvehicle.pacificit.solutions
+title: VehicleData
+description: Schede tecniche auto per mercato: codici motore, potenza, omologazione, dimensioni e consumi.
+url: https://vehicledata.pacificit.solutions
 baseurl: ""
 markdown: kramdown
-exclude: [scripts, README.md, Gemfile, Gemfile.lock, vendor, tests, BUSINESS.md, assets/data/catalogue.zip]
+exclude: [scripts, README.md, Gemfile, Gemfile.lock, vendor, tests, BUSINESS.md, assets/data/catalogue.zip, assets/data/market-US.zip, assets/data/market-FR.zip, assets/data/market-CH.zip, assets/data/market-CA.zip, LICENSE, LICENSE-LEGACY.txt]
